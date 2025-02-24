@@ -13,7 +13,7 @@ class MyService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if(player == null){
-            player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI)
+            player = MediaPlayer.create(this, R.raw.deadtome)
         }
 
         var function = intent?.getStringExtra("Function")
@@ -21,7 +21,7 @@ class MyService : Service() {
 
         if(function.equals("Play")){
             player?.start()
-            sendStatusBroadcast("Play")
+            sendStatusBroadcast("Playing")
         }else if(function.equals("Pause")){
             if(player?.isPlaying == true){
                 Log.d("test","hit")
@@ -31,9 +31,8 @@ class MyService : Service() {
         }else if(function.equals("Stop")){
             if(player?.isPlaying == true){
                 player?.stop()
-                player?.prepareAsync()
-                sendStatusBroadcast("Stopped")
-            } else{
+                player?.release()
+                player = null
                 sendStatusBroadcast("Stopped")
             }
         }

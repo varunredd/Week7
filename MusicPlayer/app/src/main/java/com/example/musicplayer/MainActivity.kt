@@ -18,10 +18,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
-    private var playBtn: ImageView? = null;
-    private var pauseBtn: ImageView? = null;
-    private var stopBtn: ImageView? = null;
-    private var tvStatus: TextView? = null
+    private lateinit var playBtn: ImageView
+    private lateinit var pauseBtn: ImageView
+    private lateinit var stopBtn: ImageView
+    private lateinit var tvStatus: TextView
 
     private lateinit var receiver: BroadcastReceiver
 
@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
         stopBtn = findViewById(R.id.stopBtn)
         tvStatus = findViewById(R.id.tvStatus)
 
-        playBtn!!.setOnClickListener(this)
-        pauseBtn!!.setOnClickListener(this)
-        stopBtn!!.setOnClickListener(this)
+        playBtn.setOnClickListener(this)
+        pauseBtn.setOnClickListener(this)
+        stopBtn.setOnClickListener(this)
 
         receiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {

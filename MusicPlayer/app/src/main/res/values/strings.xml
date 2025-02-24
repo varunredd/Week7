@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">MusicPlayer</string>
-    <string name="soundwave">SoundWave</string>
+    <string name="soundwave">Soundwave</string>
+    <string name="music_icon">Music Icon</string>
+    <string name="pause_button">Pause Button</string>
+    <string name="play_button">Play Button</string>
+    <string name="stop_button">Stop Button</string>
+    <string name="status">Status</string>
     <string name="play_status">Music is playing now</string>
     <string name="pause_status">Music is paused</string>
     <string name="stop_status">Music is stopped</string>
